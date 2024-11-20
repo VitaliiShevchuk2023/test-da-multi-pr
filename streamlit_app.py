@@ -9,6 +9,9 @@ PAGES = {
     "Інтерактивна карта": map.display,
 }
 
+st.set_page_config(page_title="Багатосторінковий застосунок", page_icon="🌟")
+
+
 # Меню навігації
 with st.sidebar:
     selected_page = option_menu(
