@@ -1,2 +1,11 @@
 streamlit
 streamlit-option-menu
+streamlit
+pandas
+numpy
+altair
+matplotlib
+folium
+streamlit_folium
+scikit-learn
+seaborn
