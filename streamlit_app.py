@@ -1,12 +1,19 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-from pages import home, data_analysis, map
+from pages import interactive_map
+from pages import prediction
+from pages import trendsanalysis
+from pages import tsunamidepthmagnitude
+
+
 
 # Словник для сторінок
 PAGES = {
-    "Головна": home.display,
-    "Аналіз даних": data_analysis.display,
-    "Інтерактивна карта": map.display,
+   
+    "Аналіз даних": trendsanalysis.display,
+    "Інтерактивна карта": interactive_map.display,
+    "Залежності": tsunamidepthmagnitude.display,
+    "Прогнозування": prediction.display
 }
 
 st.set_page_config(page_title="Багатосторінковий застосунок", page_icon="🌟")
@@ -14,7 +21,7 @@ st.set_page_config(page_title="Багатосторінковий застосу
 
 # Меню навігації
 with st.sidebar:
-    selected_page = option_menu(
+     selected_page = option_menu(
         menu_title="Навігація",
         options=list(PAGES.keys()),
         icons=["house", "bar-chart-line", "map"],
@@ -37,5 +44,4 @@ with st.sidebar:
 if selected_page in PAGES:
     # Оновлюємо параметри в URL
     st.query_params.update({"page": selected_page})
-    PAGES[selected_page]()  # Виклик функції сторінки
-
+    PAGES[selected_page]()  # Виклик функції сто
